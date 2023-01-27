@@ -3,7 +3,6 @@ name: Actions Workflow
 on:
   repository_dispatch:
     type: [build]
-  push:
   pull_request:
     types: [opened, reopened]
 
@@ -11,10 +10,15 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Payload
+        run: echo "${{ github.event.client_payload.env }}"
       - name: List Files
         run: |
           pwd
           ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
       - name: Checkout
         uses: actions/checkout@v1
       - name: List Files After Checkout

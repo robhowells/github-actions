@@ -23,6 +23,17 @@ on:
 
 - Use basic auth authorisation, using generated token as password
 
+4. To pass in extra information, e.g. environment variables, use client_payload in body:
+
+```
+{
+    "event_type": "build",
+    "client_payload": {
+        "env": "production"
+    }
+}
+```
+
 Further resources:
 https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch
 https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-dispatch-event
