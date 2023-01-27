@@ -1,10 +1,21 @@
 name: Actions Workflow
 
 on:
+  push:
+    branches:
+      - master
+      - "feature/*"
+    tags:
+      - v1
+    paths:
+      - "**.js"
+      - "!filename.js" # Exludes this file name.
+  pull_request:
+    types: [ opened, reopened ]
   repository_dispatch:
     type: [build]
-  pull_request:
-    types: [opened, reopened]
+#  schedule:
+#    - cron: "0 0 1 1 *"
 
 jobs:
   run-github-actions:

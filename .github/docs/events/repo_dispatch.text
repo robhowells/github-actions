@@ -1,4 +1,4 @@
-Steps for triggering workflow from repo dispatch event:
+Steps for triggering workflow from repo dispatch event
 
 1. Ensure workflow has repository_dispatch event hook:
 
