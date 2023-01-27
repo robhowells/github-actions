@@ -2,7 +2,7 @@ Steps for triggering workflow from repo dispatch event
 
 1. Ensure workflow has repository_dispatch event hook:
 
-```
+```yml
 on:
   repository_dispatch:
     type: [build]
@@ -15,7 +15,7 @@ on:
 - POST URL: https://api.github.com/repos/OWNER/REPO/dispatches
 - Request body:
 
-```
+```json
 {
     "event_type": "build"
 }
@@ -25,7 +25,7 @@ on:
 
 4. To pass in extra information, e.g. environment variables, use client_payload in body:
 
-```
+```json
 {
     "event_type": "build",
     "client_payload": {
