@@ -1,5 +1,5 @@
 name: Hello World
-author: Rob Howells
+author: robhowells
 description: Some description
 inputs:
   who-to-greet:
